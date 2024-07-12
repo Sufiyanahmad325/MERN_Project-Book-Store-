@@ -4,7 +4,6 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './componets/Navbar'
 import Banner from './componets/Banner'
-import Footer from './componets/Footer'
 import FreeBook from './componets/FreeBook'
 
 function App() {
