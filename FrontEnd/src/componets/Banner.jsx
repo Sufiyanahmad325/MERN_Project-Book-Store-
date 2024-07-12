@@ -32,9 +32,9 @@ function Banner() {
 
                 {/* Right side  */}
 
-                <div className=' order-1 w-full md:w-1/2  flex items-center justify-center'>
+                <div className=' order-1 w-full md:w-1/2  flex items-center justify-center '>
 
-                    <img src="https://img.freepik.com/free-vector/realistic-book-lover-composition-with-stack-colorful-books-with-eyeglasses-home-plants-tea-cup-vector-illustration_1284-77312.jpg?ga=GA1.1.851141500.1720691620&semt=sph" alt=""  />
+                    <img className='md:h-5/6' src="https://img.freepik.com/free-vector/realistic-book-lover-composition-with-stack-colorful-books-with-eyeglasses-home-plants-tea-cup-vector-illustration_1284-77312.jpg?ga=GA1.1.851141500.1720691620&semt=sph" alt=""  />
 
                 </div>
             </div>

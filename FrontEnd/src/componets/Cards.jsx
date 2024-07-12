@@ -4,8 +4,7 @@ function Cards({item}) {
     console.log(item)
     return (
         <>
-        <div className='mt-4 my-3 p-3'>
-            <div className="card  w-92 shadow-xl my-2 flex justify-center p-2 bg-blue-300 hover:scale-105 ">
+            <div className="card  w-92 shadow-xl my-2 flex justify-center p-2 bg-blue-300 hover:scale-105 dark:bg-slate-700 dark:border ml-2">
                 <figure>
                     <img
                         src={item.image}
@@ -22,7 +21,6 @@ function Cards({item}) {
                         <div className="cursor-pointer px-2 py-1 rounded-full border-2 hover:bg-pink-500 hover:text-white">Buy Now</div>
                     </div>
                 </div>
-            </div>
             </div>
         </>
     )

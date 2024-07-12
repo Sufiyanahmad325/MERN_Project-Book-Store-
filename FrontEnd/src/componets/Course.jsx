@@ -22,7 +22,7 @@ function Course() {
                 </div>
 
 
-                <div className='mt-12  grid grid-cols-1 md:grid-cols-3  lg:grid-cols-4 '>
+                <div className='mt-12  grid grid-cols-1 md:grid-cols-3 gap-2 lg:grid-cols-4 '>
                     {
                         lists.map(item => (
                             <Cards item={item} key={item.id} />
