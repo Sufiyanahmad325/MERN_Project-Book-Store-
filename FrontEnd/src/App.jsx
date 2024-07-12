@@ -17,8 +17,7 @@ function App() {
 
   return (
     <div>
-      {/* <Home/>
-      <Course/> */}
+
 
       <Routes>
         <Route path='/' element={<Home/>}/>

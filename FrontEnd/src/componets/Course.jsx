@@ -9,7 +9,7 @@ function Course() {
 
             <div className='max-w-screen-2xl container mx-auto md:px-20 px-4'>
 
-                <div className='mt-28 text-center'>
+                <div className='pt-32 text-center'>
                     <h1 className="text-2xl font-semibold ">We're Delighted to have you <span className='text-pink-500'>Here! : ) </span> </h1>
                     <p className='mt-12'>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Et enim veritatis illo recusandae? Accusantium quam rem aperiam porro officia necessitatibus, laboriosam repellat similique asperiores nemo quia nostrum inventore maxime ipsum unde natus in explicabo! Eum, dolor fugit illo perspiciatis excepturi optio culpa beatae odit sunt eaque, quisquam iusto pariatur natus earum quidem assumenda  dolor. Rem.
