@@ -13,7 +13,7 @@ function Banner() {
                             et totam. Tempora amet atque expedita, quae corrupti totam sed
                             pariatur corporis at veniam est voluptas animi!
                         </p>
-                        <label className="input input-bordered flex items-center gap-2">
+                        <label className="input input-bordered flex items-center gap-2 dark:text:white dark:bg-slate-400">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 16 16"
@@ -24,7 +24,7 @@ function Banner() {
                                 <path
                                     d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                             </svg>
-                            <input type="text" className="grow" placeholder="Email" />
+                            <input type="text" className="grow  placeholder:dark:text-white"  placeholder="Email"  />
                         </label>
                     </div>
                     <button className="btn btn-secondary mt-6">Secondary</button>

@@ -10,6 +10,7 @@ import Home from './home/Home'
 import Course from './componets/Course'
 import { Route, Routes } from 'react-router-dom'
 import Courses from './courses/Courses'
+import SignUp from './componets/SignUp'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/course' element={<Courses/>}/>
+        <Route path='/singup' element={<SignUp/>} />
       </Routes>
 
     </div>
