@@ -71,7 +71,7 @@ function SignUp() {
                                      className='underline text-blue-500 cursor-pointer'
                                       onClick={()=>document.getElementById("my_modal_3").showModal()}>Login</span>
                                 </button>{" "}
-                                <PopLogin/>
+                                <Login/>
                             </p>
                         </div>
                         </form>
