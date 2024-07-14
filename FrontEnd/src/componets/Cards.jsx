@@ -1,6 +1,7 @@
 import React from 'react'
 
 function Cards({item}) {
+    console.log(item)
     return (
         <>
             <div className="card  w-88 h-[500px] shadow-xl my-2 flex justify-center p-2 bg-blue-300 hover:scale-105 dark:bg-slate-700 dark:border ml-2">
