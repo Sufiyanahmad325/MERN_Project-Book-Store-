@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import bcryptjs from 'bcryptjs'
 
 
 const userSchema= mongoose.Schema({
@@ -16,8 +17,23 @@ const userSchema= mongoose.Schema({
         required:[true , "password is required"]
     }
 }, { timestamps: true }
-);
+)
 
-const User = mongoose.model("User" , UserSchema)
+
+userSchema.pre("save" , async function(next){
+    if(!this.isModified("password")) return next()
+        this.password = await bcryptjs.hash(this.password , 10)
+})
+
+
+
+userSchema.methods.isPasswordCorrect = async function(password){
+    bcryptjs.compare(password , this.password)
+}
+
+
+
+
+const User = mongoose.model("User" , userSchema)
 
 export default User

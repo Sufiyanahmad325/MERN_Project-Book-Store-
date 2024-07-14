@@ -1,7 +1,8 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose';
-import router from './routes/book.route.js';
+import bookRouter from './routes/book.route.js';
+import userRouter from './routes/user.route.js'
 dotenv.config({ path: "./.env" });
 import cors from 'cors'
 
@@ -19,7 +20,13 @@ app.use(cors({
 const PORT = process.env.PORT || 3000;
 const MONGO_DB_URL = process.env.MONGODBURI
 
-app.use("/book", router)
+
+app.use(express.json({limit:"16kb"}))
+
+
+
+app.use("/book", bookRouter)
+app.use("/user", userRouter)
 
 
 

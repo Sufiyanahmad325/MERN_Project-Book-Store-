@@ -1,8 +1,9 @@
-import User from "../model/user.model"
+import User from "../model/user.model.js"
+import asyncHandler from "../utils/asyncHandler.js"
 
 
 
-export const signup =async(req,res)=>{
+export const signup =asyncHandler(async(req,res)=>{
     const {fullname , email , password} = req.body
 
     if([fullname , email , password].some(field=> field.trim() == "")){
@@ -17,13 +18,29 @@ export const signup =async(req,res)=>{
         email,
     })
 
-
-
     if(existUser){
         return res.status(400).json({
-            success:true,
+            success:false,
             message:false
         })
     }
 
-}
+    const createUser = await User.create({
+        fullname,
+        email,
+        password
+    })
+
+    const user = await User.findById(createUser._id).select("-password")
+
+    res.status(200).json({
+        success:true , 
+        message:"user create successfully",
+        data:user
+    })
+
+})
+
+
+
+
