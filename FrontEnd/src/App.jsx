@@ -12,13 +12,14 @@ import { Route, Routes } from 'react-router-dom'
 import Courses from './courses/Courses'
 import SignUp from './componets/SignUp'
 import ContactUs from './home/ContactUs'
+import toast, { Toaster } from 'react-hot-toast';
 
 function App() {
   const [count, setCount] = useState(0)
   
 
   return (
-    <div>
+    <div className='dark:bg-slate-700 dark:text-white'>
 
 
       <Routes>
@@ -27,6 +28,7 @@ function App() {
         <Route path='/signup' element={<SignUp/>} />
         <Route path='/contact' element={<ContactUs/>} />
       </Routes>
+      <Toaster />
 
     </div>
   )

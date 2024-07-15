@@ -74,7 +74,7 @@ export const login=asyncHandler(async(req,res)=>{
     if(!isCorrectPassword){
         return res.status(400).json({
             success:false,
-            message:"check your email and password hahahhah"
+            message:"check your email and password"
         })
     }
 
@@ -83,7 +83,7 @@ export const login=asyncHandler(async(req,res)=>{
 
     res.status(200).json({
         success:true,
-        message:"user logged in successfully hahahahhahaahh",
+        message:"user logged in successfully",
         data:userData
     })
 

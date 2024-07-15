@@ -1,8 +1,10 @@
 import React from 'react'
 import Login from './Login'
-import { Link } from 'react-router-dom'
+import { Link, redirect } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
+import axios from 'axios'
 import PopLogin from './PopLogin'
+import toast from 'react-hot-toast'
 
 function SignUp() {
      const {
@@ -12,7 +14,26 @@ function SignUp() {
     formState: { errors },
   } = useForm()
 
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = async(data) => {
+    const userInfo ={
+        fullname:data.fullname,
+        email:data.email,
+        password:data.password
+    }
+   await axios.post("http://localhost:8000/user/signup",userInfo )
+    .then(res=>{
+        console.log(res.data);
+        if(res.data){
+            toast.success('Signup successfully');
+            // navigate("http://localhost:8000");
+        }
+        localStorage.setItem("Users" ,JSON.stringify(res.data))
+    }).catch(error=>{
+        toast.error(error.response.data.message)
+    })
+}
+
+
 
     return (
         <>
@@ -29,11 +50,11 @@ function SignUp() {
                         <div className='mt-4 space-y-2 '>
                             <span>Name</span>
                             <br />
-                            <input {...register("name", { required: true })}
+                            <input {...register("fullname", { required: true })}
                              className='w-80 px-3 border rounded-md outline-none py-1 dark:bg-slate-600 dark:text-white   '
-                              type="text" placeholder='Enter your Name' 
+                              type="text" placeholder='Enter your Name' name='fullname'
                               /> <br />
-                              {errors.name && <span className='text-red-600 text-sm'>name is required</span>}
+                              {errors.fullname && <span className='text-red-600 text-sm'>name is required</span>}
                         </div>
 
                         <div className='mt-4 space-y-2 '>
@@ -41,7 +62,7 @@ function SignUp() {
                             <br />
                             <input  {...register("email", { required: true })}
                             className='w-80 px-3 border rounded-md outline-none py-1 dark:bg-slate-600 dark:text:white   '
-                             type="email" placeholder='Enter your email' 
+                             type="email" placeholder='Enter your email' name='email'
                              /> <br />
                              {errors.email && <span className='text-red-600 text-sm'>email is required</span>}
                         </div>
@@ -51,7 +72,7 @@ function SignUp() {
                             <br />
                             <input  {...register("password", { required: true })}
                             className='w-80 px-3 border rounded-md outline-none py-1 dark:bg-slate-600 dark:text:white   '
-                             type="text" placeholder='Enter your password' 
+                             type="text" placeholder='Enter your password'  name='password'
                              /> <br />
                              {errors.password && <span className='text-red-600 text-sm'>This field is required</span>}
                         </div>
