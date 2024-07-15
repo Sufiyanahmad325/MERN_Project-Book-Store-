@@ -14,7 +14,9 @@ function Logout() {
             setAuthUser({...authUser , user:null})
             localStorage.removeItem("Users")
             toast.success("Logout successfully")
-            window.location.reload()
+            setTimeout(()=>{
+                window.location.reload()
+            },2000)
         } catch (error) {
             toast.error(error.message)
         }

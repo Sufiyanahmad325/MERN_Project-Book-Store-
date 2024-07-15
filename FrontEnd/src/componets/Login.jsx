@@ -21,11 +21,15 @@ function Login() {
         await axios.post("http://localhost:8000/user/login", userInfo)
             .then(res => {
                 console.log(res.data);
+                document.getElementById("my_modal_3").close()
                 if (res.data) {
                     toast.success('Logged in  successfully');
+                    setTimeout(()=>{
+                        window.location.reload()
+
+                    },2000)
                 }
                 localStorage.setItem("Users", JSON.stringify(res.data))
-                window.location.reload()
             }).catch(error => {
                 toast.error(error.response.data.message)
             })
