@@ -1,12 +1,14 @@
 import React from 'react'
 import Login from './Login'
-import { Link, redirect } from 'react-router-dom'
+import { Link, Navigate, redirect, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import PopLogin from './PopLogin'
 import toast from 'react-hot-toast'
 
 function SignUp() {
+
+    const Navigate = useNavigate()
      const {
     register,
     handleSubmit,
@@ -24,8 +26,11 @@ function SignUp() {
     .then(res=>{
         console.log(res.data);
         if(res.data){
+            Navigate('/')
             toast.success('Signup successfully');
-            // navigate("http://localhost:8000");
+            setTimeout(() => {
+                window.location.reload()
+            }, 2000);
         }
         localStorage.setItem("Users" ,JSON.stringify(res.data))
     }).catch(error=>{
